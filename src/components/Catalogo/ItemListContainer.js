@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Lote from './Lote/Lote.js';
-import './ItemListContainer.css';
+import './ItemListContainer.scss';
 
 
 const images2 = require('./../../images/LoteImgs/14261.jpg');

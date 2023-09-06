@@ -7,10 +7,10 @@ h1{
 
 .itemListContainer{
     margin: 20px 5%;
-}
-
-.catalogo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
+    .catalogo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

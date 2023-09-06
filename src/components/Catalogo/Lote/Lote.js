@@ -1,5 +1,5 @@
 import React from 'react';
-import './Lote.css'
+import './Lote.scss'
 
 const Lote = ({img, categoria, raza, cabezas, peso, ubicacion}) => {
 
