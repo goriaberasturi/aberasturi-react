@@ -1,8 +1,14 @@
 import { useState } from 'react';
-import Lote from './Lote/Lote.js'
-import './ItemListContainer.css'
+import Lote from './Lote/Lote.js';
+import './ItemListContainer.css';
+
+
+const images2 = require('./../../images/LoteImgs/14261.jpg');
+const images = require.context('./../../images/LoteImgs');
+const imageList = images.keys().map(img => images(img));
 
 const ItemListContainer = (props) => {
+    
     const [producto, setProducto] = useState([
         {
             id: 14260,
@@ -33,21 +39,26 @@ const ItemListContainer = (props) => {
         },
     ]);
 
+    producto.forEach((item, index, array) => array[index].img = imageList[index]);
+
     return (
-        <div>
-            {producto.map((p) => {
-                return (
-                    <Lote
-                        key={p.id}
-                        img={p.img}
-                        cabezas={p.name}
-                        categoria={p.categoria}
-                        raza={p.raza}
-                        peso={p.peso}
-                        ubicacion={p.ubicacion}
-                    />
-                )
-            })}
+        <div className='itemListContainer'>
+            <h1>Catalogo de lotes</h1>
+            <div className='catalogo'>
+                {producto.map((p) => {
+                    return (
+                        <Lote
+                            key={p.id}
+                            img={p.img}
+                            cabezas={p.cabezas}
+                            categoria={p.categoria}
+                            raza={p.raza}
+                            peso={p.peso}
+                            ubicacion={p.ubicacion}
+                        />
+                    )
+                })}
+            </div>
         </div>
     )
 }

@@ -12,7 +12,7 @@ nav {
     text-decoration: none;
 }
 
-.cart-div {
+.cartWidget {
     display: flex;
     align-items: center;
     gap: 5px;
