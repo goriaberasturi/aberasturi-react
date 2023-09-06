@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/aberasturi-react/static/css/main.d2c0e447.css",
-    "main.js": "/aberasturi-react/static/js/main.35356af0.js",
+    "main.css": "/aberasturi-react/static/css/main.e66feae4.css",
+    "main.js": "/aberasturi-react/static/js/main.d059c2d3.js",
     "static/js/787.dcc73137.chunk.js": "/aberasturi-react/static/js/787.dcc73137.chunk.js",
+    "static/media/14263.jpg": "/aberasturi-react/static/media/14263.6fe6789e389ce0f2917c.jpg",
+    "static/media/14264.jpg": "/aberasturi-react/static/media/14264.f1b00ac9aca305cda54f.jpg",
+    "static/media/14261.jpg": "/aberasturi-react/static/media/14261.9496102c552fbf4087bd.jpg",
+    "static/media/14262.jpg": "/aberasturi-react/static/media/14262.67312919b5a63201f212.jpg",
+    "static/media/14265.jpg": "/aberasturi-react/static/media/14265.407d020a2ee0762c8769.jpg",
+    "static/media/14260.jpg": "/aberasturi-react/static/media/14260.d4ceb4cbcdfe828dab1b.jpg",
     "static/media/logo.png": "/aberasturi-react/static/media/logo.0a5e81979cddec6eb2fc.png",
     "index.html": "/aberasturi-react/index.html",
-    "main.d2c0e447.css.map": "/aberasturi-react/static/css/main.d2c0e447.css.map",
-    "main.35356af0.js.map": "/aberasturi-react/static/js/main.35356af0.js.map",
+    "main.e66feae4.css.map": "/aberasturi-react/static/css/main.e66feae4.css.map",
+    "main.d059c2d3.js.map": "/aberasturi-react/static/js/main.d059c2d3.js.map",
     "787.dcc73137.chunk.js.map": "/aberasturi-react/static/js/787.dcc73137.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2c0e447.css",
-    "static/js/main.35356af0.js"
+    "static/css/main.e66feae4.css",
+    "static/js/main.d059c2d3.js"
   ]
 }
