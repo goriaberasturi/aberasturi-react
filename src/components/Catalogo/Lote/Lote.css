@@ -27,11 +27,13 @@
     height: fit-content;
     align-self: center;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 .lote-div span{
     font-size: 1.3em;
-    font-weight: 500;
+    font-weight: 600;
+    color: #0d6312;
 }
 
 .categoria {
