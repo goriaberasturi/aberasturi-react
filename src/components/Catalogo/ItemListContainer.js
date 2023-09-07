@@ -37,6 +37,33 @@ const ItemListContainer = (props) => {
             peso: 200,
             ubicacion: 'Darregueira, Buenos Aires',
         },
+        {
+            id: 14263,
+            img: '',
+            cabezas: 60,
+            categoria: 'Terneras',
+            raza: 'Aberdeen Angus Negros y Colorados',
+            peso: 360,
+            ubicacion: 'Cnel. Dorrego, Buenos Aires',
+        },
+        {
+            id: 14264,
+            img: '',
+            cabezas: 120,
+            categoria: 'Novillitos',
+            raza: 'Aberdeen Angus Negros y Colorados',
+            peso: 390,
+            ubicacion: 'Arroyo Venado, Buenos Aires',
+        },
+        {
+            id: 14265,
+            img: '',
+            cabezas: 35,
+            categoria: 'Vaquillonas',
+            raza: 'Aberdeen Angus Negros',
+            peso: 310,
+            ubicacion: 'Santa Teresa, La Pampa',
+        },
     ]);
 
     producto.forEach((item, index, array) => array[index].img = imageList[index]);
