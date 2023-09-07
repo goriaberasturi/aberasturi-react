@@ -1,11 +1,24 @@
 import React from 'react';
+import { useState } from 'react';
 import logo from './../../images/logo.png';
 import CartWidget from './CartWidget/CartWidget';
 import './NavBar.scss';
 
 const NavBar = () => {
+
+    const [navColor, setNavColor] = useState(false);
+    const changeColor = () => {
+        if(window.scrollY >= 90) {
+            setNavColor(true);
+        } else {
+            setNavColor(false);
+        }
+    }
+
+    window.addEventListener('scroll', changeColor);
+
     return (
-        <nav className='navBar'>
+        <nav className={navColor ? 'navBarBg' : 'navBar'}>
             <a href="index.html"><img src={logo} alt="Logo" /></a>
             <ul className="navLinks">
                 <li><a href="index.html" className="navbarLink active">Home</a></li>

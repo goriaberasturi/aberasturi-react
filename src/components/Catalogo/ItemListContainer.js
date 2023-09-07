@@ -2,12 +2,11 @@ import { useState } from 'react';
 import Lote from './Lote/Lote.js';
 import './ItemListContainer.scss';
 
-
-const images2 = require('./../../images/LoteImgs/14261.jpg');
 const images = require.context('./../../images/LoteImgs');
 const imageList = images.keys().map(img => images(img));
 
 const ItemListContainer = (props) => {
+
     
     const [producto, setProducto] = useState([
         {
@@ -70,7 +69,7 @@ const ItemListContainer = (props) => {
 
     return (
         <div className='itemListContainer'>
-            <h1>Catalogo de lotes</h1>
+            <h1>NUESTRO CATALOGO DE LOTES</h1>
             <div className='catalogo'>
                 {producto.map((p) => {
                     return (

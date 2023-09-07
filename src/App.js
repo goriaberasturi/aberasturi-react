@@ -1,12 +1,11 @@
 import './App.scss';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/Catalogo/ItemListContainer';
+import Parallaje from './components/Catalogo/Parallaje';
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting="Bienvenidos al e-commerce de Gregorio Aberasturi SRL"/>
+      <Parallaje/>
     </div>
   );
 }
