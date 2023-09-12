@@ -1,11 +1,16 @@
 import './App.scss';
+import { Parallax } from 'react-parallax';
 import NavBar from './components/NavBar/NavBar';
-import Parallaje from './components/Catalogo/Parallaje';
+import ItemListContainer from './components/Catalogo/ItemListContainer';
+import parallaxBg from './images/parallaxBg.jpg'
 
 function App() {
   return (
     <div className="App">
-      <Parallaje/>
+      <Parallax blur={3} bgImage={parallaxBg} bgImageAlt="background" strength={400}>
+        <NavBar/>
+        <ItemListContainer/>
+      </Parallax>
     </div>
   );
 }
