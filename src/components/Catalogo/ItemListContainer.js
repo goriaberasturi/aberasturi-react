@@ -5,7 +5,7 @@ import './ItemListContainer.scss';
 const images = require.context('./../../images/LoteImgs');
 const imageList = images.keys().map(img => images(img));
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
 
     
     const [producto, setProducto] = useState([
