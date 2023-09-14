@@ -13,7 +13,7 @@ function App() {
         <Parallax blur={3} bgImage={parallaxBg} bgImageAlt="background" strength={400}>
           <NavBar />
           <Routes>
-            <Route exact path='/' element={<ItemListContainer/>}></Route>
+            <Route exact path='/aberasturi-react' element={<ItemListContainer/>}></Route>
             <Route exact path='/cart' element={<Cart/>}></Route>
             <Route exact path='/catalogo' element={<ItemListContainer/>}></Route>
           </Routes>
