@@ -4,7 +4,7 @@ import { Parallax } from 'react-parallax';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/Catalogo/ItemListContainer';
 import parallaxBg from './images/parallaxBg.jpg';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Cart from './components/NavBar/CartWidget/Cart';
 import ItemDetailContainer from './components/Catalogo/ItemDetailContainer';
 
@@ -69,17 +69,17 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <NavBar />
         <Parallax blur={3} bgImage={parallaxBg} bgImageAlt="background" strength={400}>
           <Routes>
-            <Route exact path='/' element={<ItemListContainer />}></Route>
+            <Route exact path='/' element={<ItemListContainer items={items}/>}></Route>
             <Route exact path='/cart' element={<Cart />}></Route>
             <Route exact path='/catalogo' element={<ItemListContainer items={items}/>}></Route>
             <Route exact path='/catalogo/:itemId' element={<ItemDetailContainer items={items}/>}></Route>
           </Routes>
         </Parallax>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
