@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
-.lote{
+.lote {
     display: grid;
     width: 90%;
     height: 230px;
@@ -9,19 +9,24 @@
     align-items: stretch;
     align-content: stretch;
     justify-items: center;
-    border-radius: 7px ;
+    border-radius: 7px;
     margin: 10px;
-    box-shadow: 1px 1px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.75);
     background-color: rgba(0, 0, 0, 0.613);
     overflow: hidden;
     transition: .25s;
+    
+    &:hover {
+        background-color: rgba(35, 35, 35, 0.613);
+    }
 
-    img{
+    img {
         max-height: 230px;
         grid-area: 1 / 1 / 5 / 2;
     }
 
-    .lote-div{
+
+    .lote-div {
         width: 90%;
         align-self: center;
         font-family: 'Montserrat', sans-serif;
@@ -34,7 +39,7 @@
             color: #0d6312;
         }
     }
-    
+
     .categoria {
         grid-area: 1 / 2 / 2 / 4;
         display: flex;
@@ -47,24 +52,24 @@
         background-color: #0d6312;
         color: white;
     }
-    
+
     .raza {
         grid-area: 2 / 2 / 3 / 4;
         font-size: 1.7em;
         font-weight: 700;
     }
-    
+
     .cabezas {
         grid-area: 3 / 2 / 4 / 3;
         font-weight: 500;
     }
-    
-    .peso{
+
+    .peso {
         grid-area: 3 / 3 / 4 / 4;
         font-weight: 500;
     }
-    
-    .ubicacion{
+
+    .ubicacion {
         grid-area: 4 / 2 / 5 / 4;
         font-weight: 500;
     }
