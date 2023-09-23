@@ -6,7 +6,9 @@
         "categoria":"Terneros-Terneras",
         "raza":"Aberdeen Angus y Cruza Británicos",
         "peso":140,
-        "ubicacion":"Rivera, Buenos Aires"
+        "ubicacion":"Rivera, Buenos Aires",
+        "observaciones": "14 Terneros Aberdeen Angus y Cruza Británicos. Peso Promedio: 140 Kg. Ubicación: Rivera, Pcia. de Buenos Aires.",
+        "precio": 940
     },
     {
         "id":14261,
@@ -15,7 +17,9 @@
         "categoria":"Terneros-Terneras",
         "raza":"Aberdeen Angus y Cruza Británicos",
         "peso":180,
-        "ubicacion":"Castelli, Buenos Aires"
+        "ubicacion":"Castelli, Buenos Aires",
+        "observaciones": "164 Terneros Aberdeen Angus y Cruza Británicos. Peso Promedio: 180 Kg. Ubicación: Castelli, Pcia. de Buenos Aires.",
+        "precio": 940
     },
     {
         "id":14262,
@@ -24,7 +28,9 @@
         "categoria":"Terneros",
         "raza":"Aberdeen Angus Negros",
         "peso":200,
-        "ubicacion":"Darregueira, Buenos Aires"
+        "ubicacion":"Darregueira, Buenos Aires",
+        "observaciones": "90 Terneros Aberdeen Angus Negros. Peso Promedio: 200 Kg. Ubicación: Darregueira, Pcia. de Buenos Aires.",
+        "precio": 920
     },
     {
         "id":14263,
@@ -33,7 +39,9 @@
         "categoria":"Terneras",
         "raza":"Aberdeen Angus Negros y Colorados",
         "peso":360,
-        "ubicacion":"Cnel. Dorrego, Buenos Aires"
+        "ubicacion":"Cnel. Dorrego, Buenos Aires",
+        "observaciones": "60 Terneros Aberdeen Angus Negros y Colorados. Peso Promedio: 360 Kg. Ubicación: Cnel. Dorrego, Pcia. de Buenos Aires.",
+        "precio": 930
     },
     {
         "id":14264,
@@ -42,7 +50,9 @@
         "categoria":"Novillitos",
         "raza":"Aberdeen Angus Negros y Colorados",
         "peso":390,
-        "ubicacion":"Arroyo Venado, Buenos Aires"
+        "ubicacion":"Arroyo Venado, Buenos Aires",
+        "observaciones": "120 Terneros Aberdeen Angus Negros y Colorados. Peso Promedio: 390 Kg. Ubicación: Arroyo Venado, Pcia. de Buenos Aires.",
+        "precio": 930
     },
     {
         "id":14265,
@@ -51,6 +61,8 @@
         "categoria":"Vaquillonas",
         "raza":"Aberdeen Angus Negros",
         "peso":310,
-        "ubicacion":"Santa Teresa, La Pampa"
+        "ubicacion":"Santa Teresa, La Pampa",
+        "observaciones": "35 Terneros Aberdeen Angus Negros. Peso Promedio: 310 Kg. Ubicación: Santa Teresa, Pcia. de La Pampa.",
+        "precio": 920
     }
 ]
