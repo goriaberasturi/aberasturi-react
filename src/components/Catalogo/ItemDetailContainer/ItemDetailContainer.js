@@ -1,14 +1,19 @@
 import React from 'react';
 import './ItemDetailContainer.scss';
 import { useParams } from 'react-router-dom';
-import arrayLotes from '../../json/lotes.json';
+import arrayLotes from '../../../json/lotes.json';
+import ItemCount from './ItemCount/ItemCount';
 
-const images = require.context('./../../images/LoteImgs');
+const images = require.context('./../../../images/LoteImgs');
 const imageList = images.keys().map(imag => images(imag));
 
 const ItemDetailContainer = () => {
     
     const {itemId} = useParams();
+
+    const onAdd = (cant) => {
+        console.log(`Se agregaron ${cant} cabezas del lote ${item.id}`);
+    }
 
     arrayLotes.forEach((item, index, array) => {
         array[index].img = imageList[index];
@@ -26,6 +31,7 @@ const ItemDetailContainer = () => {
                 <div className='lote-div peso'><span>Peso: </span>{item.peso}</div>
                 <div className='lote-div ubicacion'><span>Localidad: </span>{item.ubicacion}</div>
                 <div className='lote-div observaciones'><span>Observaciones: </span>{item.observaciones}</div>
+                <ItemCount stock={item.cabezas} inicial={1} onAdd={onAdd}/>
             </div>
         </div>
     )

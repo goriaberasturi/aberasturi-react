@@ -5,7 +5,7 @@ import ItemListContainer from './components/Catalogo/ItemListContainer';
 import parallaxBg from './images/parallaxBg.jpg';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/NavBar/CartWidget/Cart';
-import ItemDetailContainer from './components/Catalogo/ItemDetailContainer';
+import ItemDetailContainer from './components/Catalogo/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
