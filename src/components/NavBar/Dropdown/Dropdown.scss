@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+.Dropdown {
+    position: absolute;
+    top: 96px;
+    left: 48.6%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.915);
+    transition: .3s ease-in;
+    border-radius: 0 0 5px 5px;
+
+
+    .navbarLink {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: white;
+    }
+}

@@ -1,13 +1,34 @@
+import { useState, useEffect } from 'react';
 import Lote from './Lote/Lote.js';
 import './ItemListContainer.scss';
 import { Link, useParams } from 'react-router-dom';
+import arrayLotes from '../../json/lotes.json';
 
 const images = require.context('./../../images/LoteImgs');
 const imageList = images.keys().map(img => images(img));
 
-const ItemListContainer = ({items}) => {
+
+const ItemListContainer = () => {
+
+    const [lotes, setLotes] = useState([]);
+    const {cat} = useParams();
+
+    useEffect(() => {
+        const fetchLotes = async () => {
+            try {
+                const data = await new Promise((resolve) => {
+                    resolve(cat ? arrayLotes.filter(i => i.categoria === cat) : arrayLotes);
+                })
+                setLotes(data);
+            } catch(error) {
+                console.log('Error: ', error);
+            }
+        }
+
+        fetchLotes();
+    }, [cat]);
     
-    items.forEach((item, index, array) => {
+    lotes.forEach((item, index, array) => {
         array[index].img = imageList[index];
     });
 
@@ -15,7 +36,7 @@ const ItemListContainer = ({items}) => {
         <div className='itemListContainer'>
             <h1>NUESTRO CATALOGO DE LOTES</h1>
             <div className='catalogo'>
-                {items.map((p) => {
+                {lotes.map((p) => {
                     return (
                         <Link key={p.id} className='ItemLink' to={`/catalogo/${p.id}`}>
                             <Lote

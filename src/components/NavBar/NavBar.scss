@@ -2,14 +2,13 @@
 
 nav {
     position: fixed;
-    width: 99%;
-    overflow-y: scroll;
+    width: 100%;
     top: 0;
     z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 40px;
     transition: .3s ease-in;
 
     .navLinks {
@@ -24,7 +23,6 @@ nav {
                 text-decoration: none;
                 color: white;
                 font-family: 'Montserrat', sans-serif;
-                ;
                 font-size: 1.2em;
                 font-weight: 500;
             }
@@ -41,20 +39,23 @@ nav {
             gap: 5px;
             color: white;
             font-family: 'Montserrat', sans-serif;
-            ;
             font-size: 1.2em;
             font-weight: 500;
         }
     }
 }
 
-.navBarBg {
+.navbarChange {
     background-color: rgba(255, 255, 255, .99);
 
     .navLinks {
-        .navbarLink {
+        .navbarLink, .Dropdown .navbarLink{
             color: black;
             font-weight: 600;
+        }
+
+        .Dropdown {
+            background-color: rgba(255, 255, 255, .99);
         }
     }
 
