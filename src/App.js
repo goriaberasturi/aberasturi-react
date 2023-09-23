@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/Catalogo/ItemListContainer/ItemListContainer';
 import parallaxBg from './images/parallaxBg.jpg';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Cart from './components/NavBar/CartWidget/Cart';
+import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/Catalogo/ItemDetailContainer/ItemDetailContainer';
 
 
