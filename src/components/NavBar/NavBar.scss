@@ -8,12 +8,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
+    padding: 0px 40px;
     transition: .3s ease-in;
 
     .navLinks {
         display: flex;
+        height: 96px;
         justify-content: space-evenly;
+        align-items: center;
         width: 70%;
 
         li {
