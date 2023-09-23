@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import Lote from './Lote/Lote.js';
+import Lote from './../Lote/Lote.js';
 import './ItemListContainer.scss';
 import { Link, useParams } from 'react-router-dom';
-import arrayLotes from '../../json/lotes.json';
+import arrayLotes from '../../../json/lotes.json';
 
-const images = require.context('./../../images/LoteImgs');
+const images = require.context('./../../../images/LoteImgs');
 const imageList = images.keys().map(img => images(img));
 
 

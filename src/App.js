@@ -1,7 +1,7 @@
 import './App.scss';
 import { Parallax } from 'react-parallax';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/Catalogo/ItemListContainer';
+import ItemListContainer from './components/Catalogo/ItemListContainer/ItemListContainer';
 import parallaxBg from './images/parallaxBg.jpg';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/NavBar/CartWidget/Cart';
