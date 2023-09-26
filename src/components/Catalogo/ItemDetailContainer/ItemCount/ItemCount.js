@@ -21,12 +21,22 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
         onAdd(count);
     }
 
+    const AgregarTodo = () => {
+        setCount(stock);
+    }
+
+    const QuitarTodo = () => {
+        setCount(1);
+    }
+
     return (
         <div className='ItemCount'>
             <div className='counter'>
                 <button className='counterBtn resta' onClick={restar}> - </button>
                 <label>{count}</label>
                 <button className='counterBtn suma' onClick={sumar}> + </button>
+                <button className='counterBtn vaciar' onClick={QuitarTodo}> ◄ </button>
+                <button className='counterBtn llenar' onClick={AgregarTodo}> ► </button>
             </div>
             <button className='agregar' onClick={AgregarCantidad}>Agregar al carrito</button>
         </div>
