@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
                 <div className='lote-div peso'><span>Peso: </span>{item.peso}</div>
                 <div className='lote-div ubicacion'><span>Localidad: </span>{item.ubicacion}</div>
                 <div className='lote-div observaciones'><span>Observaciones: </span>{item.observaciones}</div>
-                <ItemCount stock={item.cabezas} inicial={1} onAdd={onAdd}/>
+                <ItemCount id={item.id} stock={item.cabezas} inicial={1} onAdd={onAdd}/>
             </div>
         </div>
     )

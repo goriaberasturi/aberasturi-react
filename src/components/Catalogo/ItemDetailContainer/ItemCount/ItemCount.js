@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './ItemCount.scss';
+import { cartContext } from '../../../Context/CartContext';
 
-const ItemCount = ({ stock, inicial, onAdd }) => {
+const ItemCount = ({id, stock, inicial, onAdd }) => {
 
     const [count, setCount] = useState(inicial);
+
+    const {addLote} = useContext(cartContext);
 
     const sumar = () => {
         if (stock > count) {
@@ -17,16 +20,16 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
         }
     }
 
-    const AgregarCantidad = () => {
-        onAdd(count);
-    }
-
     const AgregarTodo = () => {
         setCount(stock);
     }
 
     const QuitarTodo = () => {
         setCount(1);
+    }
+
+    const handleAdd = () => {
+        addLote({id, count});
     }
 
     return (
@@ -38,7 +41,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
                 <button className='counterBtn vaciar' onClick={QuitarTodo}> ◄ </button>
                 <button className='counterBtn llenar' onClick={AgregarTodo}> ► </button>
             </div>
-            <button className='agregar' onClick={AgregarCantidad}>Agregar al carrito</button>
+            <button className='agregar' onClick={handleAdd}>Agregar al carrito</button>
         </div>
     )
 }
