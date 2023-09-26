@@ -22,7 +22,6 @@ const ItemListContainer = () => {
                     resolve(cat ? arrayLotes.filter(i => i.categoria === cat) : arrayLotes);
                 })
                 setLotes(data)
-                console.log(lotes)
             } catch (error) {
                 console.log('Error: ', error);
             }
