@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Lote from './../Lote/Lote.js';
 import './ItemListContainer.scss';
 import { Link, useParams } from 'react-router-dom';
 import arrayLotes from '../../../json/lotes.json';
+import { cartContext } from '../../Context/CartContext.js';
 
 const images = require.context('./../../../images/LoteImgs');
 const imageList = images.keys().map(img => images(img));
@@ -14,6 +15,9 @@ const ItemListContainer = () => {
 
     const [lotes, setLotes] = useState([]);
     const { cat } = useParams();
+
+    const ctxtCarrito = useContext(cartContext);
+    console.log(ctxtCarrito);
 
     useEffect(() => {
         const fetchLotes = async () => {
