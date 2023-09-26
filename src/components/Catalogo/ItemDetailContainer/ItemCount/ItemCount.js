@@ -29,16 +29,16 @@ const ItemCount = ({id, stock, inicial, onAdd }) => {
     }
 
     const handleAdd = () => {
-        addLote({id, count});
+        addLote({llave: id, cant: count});
     }
 
     return (
         <div className='ItemCount'>
             <div className='counter'>
+                <button className='counterBtn vaciar' onClick={QuitarTodo}> ◄ </button>
                 <button className='counterBtn resta' onClick={restar}> - </button>
                 <label>{count}</label>
                 <button className='counterBtn suma' onClick={sumar}> + </button>
-                <button className='counterBtn vaciar' onClick={QuitarTodo}> ◄ </button>
                 <button className='counterBtn llenar' onClick={AgregarTodo}> ► </button>
             </div>
             <button className='agregar' onClick={handleAdd}>Agregar al carrito</button>

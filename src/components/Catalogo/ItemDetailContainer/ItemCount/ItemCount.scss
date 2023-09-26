@@ -10,7 +10,7 @@
     
     .counter {
         display: grid;
-        grid-template: 1fr / 25px repeat(3, 40px) 25px;
+        grid-template: 1fr / 32px repeat(3, 40px) 32px;
         
         .counterBtn {
             width: 40px;
@@ -25,11 +25,11 @@
         }
         
         .vaciar {
-            width: 25px;
+            width: 30px;
             font-size: 1em;
             grid-area: 1 / 1 / 2 / 2;
+            justify-self: start;
             border-radius: 3px 0 0 3px;
-            border-right: 1px solid black;
             box-shadow: 10px black;
         }
         
@@ -53,11 +53,11 @@
         }
         
         .llenar {
-            width: 25px;
+            width: 30px;
             font-size: 1em;
             grid-area: 1 / 5 / 2 / 6;
+            justify-self: end;
             border-radius: 0 3px 3px 0;
-            border-left: 1px solid black;
             box-shadow: 10px black;
         }
     }
