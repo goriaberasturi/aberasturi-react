@@ -6,7 +6,7 @@ import parallaxBg from './images/parallaxBg.jpg';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/Catalogo/ItemDetailContainer/ItemDetailContainer';
-import CartContext from './components/Context/CartContext';
+import CartContext from './Context/CartContext';
 
 
 function App() {

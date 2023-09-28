@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { cartContext } from '../Context/CartContext';
+import { cartContext } from '../../Context/CartContext';
 import Lote from './../Catalogo/Lote/Lote';
 import './Cart.scss';
 import arrayLotes from '../../json/lotes.json';

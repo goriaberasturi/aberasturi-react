@@ -15,7 +15,7 @@
         align-items: stretch;
         align-content: stretch;
         justify-items: center;
-        border-radius: 7px ;
+        border-radius: 8px ;
         margin: 10px;
         box-shadow: 1px 1px 13px 0px rgba(0,0,0,0.75);
         background-color: rgba(0, 0, 0, 0.613);
@@ -79,21 +79,6 @@
         .observaciones{
             grid-area: 5 / 1 / 6 / 5;
             font-weight: 500;
-        }
-        
-        .agregar {
-            grid-area: 6 / 3 / 7 / 5;
-            align-self: center;
-            padding: 0 20px;
-            height: 40px;
-            border: none;
-            background-color: #0d6312;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1em;
-            font-weight: 500;
-            border-radius: 3px;
-            cursor: pointer;
         }
     }
 }

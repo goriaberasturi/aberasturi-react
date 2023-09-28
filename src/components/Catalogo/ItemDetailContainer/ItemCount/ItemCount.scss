@@ -22,6 +22,8 @@
             font-size: 1.5em;
             font-weight: 500;
             cursor: pointer;
+            transition: .3s;
+            overflow: hidden;
         }
         
         .vaciar {
@@ -29,7 +31,7 @@
             font-size: 1em;
             grid-area: 1 / 1 / 2 / 2;
             justify-self: start;
-            border-radius: 3px 0 0 3px;
+            border-radius: 8px 0 0 8px;
             box-shadow: 10px black;
         }
         
@@ -57,8 +59,29 @@
             font-size: 1em;
             grid-area: 1 / 5 / 2 / 6;
             justify-self: end;
-            border-radius: 0 3px 3px 0;
+            border-radius: 0 8px 8px 0;
             box-shadow: 10px black;
         }
+
+        .off {
+            background-color: rgba(0, 0, 0, 0.613);
+            color: rgba(255, 255, 255, 0.457);
+        }
+        
+    }
+
+    .agregar {
+        grid-area: 6 / 3 / 7 / 5;
+        align-self: center;
+        padding: 0 20px;
+        height: 40px;
+        border: none;
+        background-color: #0d6312;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1em;
+        font-weight: 500;
+        border-radius: 8px;
+        cursor: pointer;
     }
 }

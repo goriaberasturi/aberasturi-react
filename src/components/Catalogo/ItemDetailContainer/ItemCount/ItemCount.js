@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import './ItemCount.scss';
-import { cartContext } from '../../../Context/CartContext';
+import { cartContext } from '../../../../Context/CartContext';
 
 const ItemCount = ({id, stock, inicial, onAdd }) => {
 
@@ -35,11 +35,11 @@ const ItemCount = ({id, stock, inicial, onAdd }) => {
     return (
         <div className='ItemCount'>
             <div className='counter'>
-                <button className='counterBtn vaciar' onClick={QuitarTodo}> ◄ </button>
-                <button className='counterBtn resta' onClick={restar}> - </button>
+                <button className={`counterBtn vaciar${count===1 ? ' off' : ''}`} onClick={QuitarTodo}> ◄ </button>
+                <button className={`counterBtn resta${count===1 ? ' off' : ''}`} onClick={restar}> - </button>
                 <label>{count}</label>
-                <button className='counterBtn suma' onClick={sumar}> + </button>
-                <button className='counterBtn llenar' onClick={AgregarTodo}> ► </button>
+                <button className={`counterBtn suma${count===stock ? ' off' : ''}`} onClick={sumar}> + </button>
+                <button className={`counterBtn llenar${count===stock ? ' off' : ''}`} onClick={AgregarTodo}> ► </button>
             </div>
             <button className='agregar' onClick={handleAdd}>Agregar al carrito</button>
         </div>
