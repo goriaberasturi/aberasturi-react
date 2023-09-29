@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import './ItemCount.scss';
 import { cartContext } from '../../../../Context/CartContext';
 
-const ItemCount = ({id, stock, inicial, onAdd }) => {
+const ItemCount = ({id, stock, inicial}) => {
 
     const [count, setCount] = useState(inicial);
 
@@ -29,7 +29,7 @@ const ItemCount = ({id, stock, inicial, onAdd }) => {
     }
 
     const handleAdd = () => {
-        addLote({llave: id, cant: count});
+        addLote({llave: id, cant: count, stock: stock});
     }
 
     return (

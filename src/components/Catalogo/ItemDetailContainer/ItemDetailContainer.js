@@ -5,19 +5,22 @@ import arrayLotes from '../../../json/lotes.json';
 import ItemCount from './ItemCount/ItemCount';
 
 const images = require.context('./../../../images/LoteImgs');
-const imageList = images.keys().map(imag => images(imag));
+const imageList = [];
 
-arrayLotes.forEach((item, index, array) => {
-    array[index].img = imageList[index];
+// Se crea un objeto de la forma {idLote1 : rutaReact1, idLote2 : rutaReact2, ...}
+// Se le quitan a las keys del objeto images los ".", "/" y extension (".jpg") para que quede el id del lote
+images.keys().map(img => {
+    imageList[img.replace('./', '').replace('.jpg', '')] = images(img);
+});
+
+// Se busca el id en el json importado y luego se le asigna a la propiedad imagen, el valor obtenido de buscar el id en el objeto creado en al linea 12
+Object.keys(imageList).forEach(imag => {
+    arrayLotes.find(x => x.id === parseInt(imag)).img = imageList[imag];
 });
 
 const ItemDetailContainer = () => {
 
     const { itemId } = useParams();
-
-    const onAdd = (cant) => {
-        console.log(`Se agregaron ${cant} cabezas del lote ${item.id}`);
-    }
 
     const item = arrayLotes.find(i => String(i.id) === itemId);
 
@@ -31,7 +34,7 @@ const ItemDetailContainer = () => {
                 <div className='lote-div peso'><span>Peso: </span>{item.peso}</div>
                 <div className='lote-div ubicacion'><span>Localidad: </span>{item.ubicacion}</div>
                 <div className='lote-div observaciones'><span>Observaciones: </span>{item.observaciones}</div>
-                <ItemCount id={item.id} stock={item.cabezas} inicial={1} onAdd={onAdd} />
+                <ItemCount id={item.id} stock={item.cabezas} inicial={1}/>
             </div>
         </div>
     )
