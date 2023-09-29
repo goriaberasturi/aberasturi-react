@@ -10,14 +10,16 @@ const CartContext = ({children}) => {
 
         if(tmp){
             if(tmp.cant + lote.cant > lote.stock) {
-                alert('No hay stock disponible para la cantidad indicada.\nSe agrego al carrito la maxima cantidad disponible');
+                alert('La cantidad de cabezas indicadas es mayor a la disponible.\nSe agrego al carrito la maxima cantidad disponible');
                 tmp.cant = lote.stock;
             } else {
                 tmp.cant += lote.cant;
+                alert('Se agrego el lote al carrito');
             }
-
+            
         } else {
             setCart([...cart, lote]);
+            alert('Se agrego el lote al carrito');
         }
     }
     

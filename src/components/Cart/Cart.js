@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { cartContext } from '../../Context/CartContext';
-import Lote from './../Catalogo/Lote/Lote';
+import CartItem from './CartItem/CartItem';
 import './Cart.scss';
 import arrayLotes from '../../json/lotes.json';
 
@@ -31,17 +31,20 @@ const Cart = () => {
             {cart.map((lt) => {
                 let item = findLote(arrayLotes, lt.llave);
                 return(
-                    <Lote 
-                    key={lt.llave} 
-                    img={item.img} 
+                    <CartItem
+                    key={lt.llave}
+                    id={lt.llave}
+                    img={item.img}
                     categoria={item.categoria}
                     raza={item.raza}
                     cabezas={lt.cant}
                     peso={item.peso}
-                    ubicacion={item.ubicacion}
                     />
                 )
             })}
+            <div className='cartCheck'>
+
+            </div>
         </div>
     )
 }
