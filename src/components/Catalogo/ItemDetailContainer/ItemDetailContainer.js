@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './ItemDetailContainer.scss';
 import { useParams } from 'react-router-dom';
-import arrayLotes from '../../../json/lotes.json';
 import ItemCount from './ItemCount/ItemCount';
-import { Firestore, doc, getDoc, getFirestore } from 'firebase/firestore';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
@@ -18,8 +17,6 @@ const ItemDetailContainer = () => {
             .then((res) => setLote({id: res.id, ...res.data()}));
     }, [itemId]);
 
-    console.log(lote);
-
     return (
         <div className='ItemDetailContainer'>
             <div className='ItemDetail'>
@@ -30,7 +27,7 @@ const ItemDetailContainer = () => {
                 <div className='lote-div peso'><span>Peso: </span>{lote.peso}</div>
                 <div className='lote-div ubicacion'><span>Localidad: </span>{lote.ubicacion}</div>
                 <div className='lote-div observaciones'><span>Observaciones: </span>{lote.observaciones}</div>
-                <ItemCount id={lote.id} stock={lote.cabezas} inicial={1}/>
+                <ItemCount lote={lote} stock={lote.cabezas} inicial={1}/>
             </div>
         </div>
     )

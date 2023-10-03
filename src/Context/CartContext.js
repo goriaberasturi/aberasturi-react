@@ -6,7 +6,7 @@ const CartContext = ({children}) => {
     const [cart, setCart] = useState([]);
 
     const addLote = (lote) => {
-        let tmp = cart.find(x => x.llave === lote.llave);
+        let tmp = cart.find(x => x.carItem === lote);
 
         if(tmp){
             if(tmp.cant + lote.cant > lote.stock) {
@@ -22,9 +22,16 @@ const CartContext = ({children}) => {
             alert('Se agrego el lote al carrito');
         }
     }
+
+    const totalPrice = () => {
+        const suma = cart.reduce((acum, item) => {
+            return acum + item.precio;
+        }, 0);
+        return suma;
+    }
     
     return (
-        <cartContext.Provider value={{cart, addLote}}>
+        <cartContext.Provider value={{cart, addLote, totalPrice}}>
             {children}
         </cartContext.Provider>
     )
