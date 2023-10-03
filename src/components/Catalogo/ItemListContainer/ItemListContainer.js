@@ -13,6 +13,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         const queryDB = getFirestore();
         const queryCollection = collection(queryDB, 'lotes');
+        
         if (cat) {
             const queryFilter = query(queryCollection, where('categoryId', '==', cat));
             getDocs(queryFilter)

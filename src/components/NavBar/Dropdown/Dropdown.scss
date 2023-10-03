@@ -7,10 +7,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.5rem 1rem;
-    gap: 0.5rem;
     background-color: rgba(0, 0, 0, 0.37);
     backdrop-filter: blur(5px);
     transition: .3s ease-in;
     border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    
+    a {
+        width: 100%;
+        padding: .2em .5em;
+        transition: .1s;
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.526);
+        }
+    }
 }

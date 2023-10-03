@@ -22,8 +22,12 @@
             font-size: 1.5em;
             font-weight: 500;
             cursor: pointer;
-            transition: .3s;
+            transition: .2s;
             overflow: hidden;
+
+            &:hover {
+                filter: brightness(85%);
+            }
         }
         
         .vaciar {
@@ -83,5 +87,10 @@
         font-weight: 500;
         border-radius: 8px;
         cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            filter: brightness(85%);
+        }
     }
 }

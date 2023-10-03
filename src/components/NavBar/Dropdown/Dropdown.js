@@ -1,27 +1,17 @@
 import { Link } from 'react-router-dom';
 import './Dropdown.scss';
-import arrayLotes from '../../../json/lotes.json';
 
 
 const Dropdown = () => {
 
-    const cats = [];
-
     return (
         <div className='Dropdown'>
-            {arrayLotes.map((p) => {
-                if (!cats.includes(p.categoria)) {
-                    cats.push(p.categoria);
-                    return (
-                        <li key={p.id}>
-                            <Link key={p.id} className="navbarLink" to={`/catalogo/category/${p.categoria}`}>
-                                {p.categoria}
-                            </Link>
-                        </li>
-                    )
-                }
-            })}
-            <li><Link className='navbarLink' to={'/catalogo'}>Todos</Link></li>
+            <Link className="navbarLink" to={'/catalogo/category/Terneros-Terneras'}>Terneros-Terneras</Link>
+            <Link className="navbarLink" to={'/catalogo/category/Terneros'}>Terneros</Link>
+            <Link className="navbarLink" to={'/catalogo/category/Terneras'}>Terneras</Link>
+            <Link className="navbarLink" to={'/catalogo/category/Vaquillonas'}>Vaquillonas</Link>
+            <Link className="navbarLink" to={'/catalogo/category/Novillitos'}>Novillitos</Link>
+            <Link className='navbarLink' to={'/catalogo'}>Todos</Link>
         </div>
     )
 }
