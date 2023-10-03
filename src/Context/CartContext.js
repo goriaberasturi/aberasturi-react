@@ -12,23 +12,23 @@ const CartContext = ({children}) => {
             if(tmp.cant + lote.cant > lote.stock) {
                 alert('La cantidad de cabezas indicadas es mayor a la disponible.\nSe agrego al carrito la maxima cantidad disponible');
                 tmp.cant = lote.stock;
-                console.log(cart);
+
             } else {
                 tmp.cant += lote.cant;
                 alert('Se agrego el lote al carrito');
-                console.log(cart);
             }
             
         } else {
             setCart([...cart, lote]);
             alert('Se agrego el lote al carrito');
-            console.log(cart);
         }
     }
 
+    console.log(cart);
+
     const totalPrice = () => {
-        const suma = cart.reduce((acum, item) => {
-            return acum + item.precio;
+        const suma = cart.reduce((acum, cartItem) => {
+            return acum + cartItem.prod.precio*cartItem.cant*cartItem.prod.peso;
         }, 0);
         return suma;
     }

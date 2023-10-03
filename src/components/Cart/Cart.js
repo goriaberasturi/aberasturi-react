@@ -17,14 +17,16 @@ const Cart = () => {
             address: 'fake street 123'
         },
 
-        items: cart.map((prod) => ({
-            id: prod.id,
-            precio: prod.precio,
-            cantidad: prod.cantidad
+        items: cart.map((cartItem) => ({
+            id: cartItem.prod.id,
+            precio: cartItem.prod.precio,
+            cantidad: cartItem.cant
         })),
 
         total: totalPrice(),
     }
+
+    console.log(order);
 
     const handleClick = () => {
         const db = getFirestore();
@@ -35,7 +37,6 @@ const Cart = () => {
     return (
         <div className='Cart'>
             {cart.map((cartItem) => {
-                console.log(cartItem);
                 return(
                     <CartItem key={cartItem.prod.id} cartItem={cartItem}/>
                 )

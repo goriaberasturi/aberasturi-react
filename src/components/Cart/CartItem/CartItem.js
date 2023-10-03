@@ -3,8 +3,6 @@ import './CartItem.scss';
 
 const CartItem = ({cartItem}) => {
 
-    console.log (cartItem);
-
     return (
         <div className='CartItem'>
             <img src={cartItem.prod.img} alt='cardImg'/>
@@ -12,6 +10,8 @@ const CartItem = ({cartItem}) => {
             <div className='lote-div raza'>{cartItem.prod.raza}</div>
             <div className='lote-div cabezas'><span>Cabezas: </span>{cartItem.cant}</div>
             <div className='lote-div peso'><span>Peso: </span>{cartItem.prod.peso}</div>
+            <div className='lote-div precio'><span>Precio: </span> {`$ ${cartItem.prod.precio}`}</div>
+            <div className='lote-div total'><span>Total: </span> {`$ ${cartItem.prod.precio*cartItem.prod.peso*cartItem.cant}`}</div>
         </div>
     )
 }
