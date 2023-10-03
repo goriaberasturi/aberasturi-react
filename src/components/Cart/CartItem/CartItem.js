@@ -1,17 +1,17 @@
 import React from 'react';
 import './CartItem.scss';
 
-const CartItem = ({prod}) => {
+const CartItem = ({cartItem}) => {
 
-    console.log (prod);
+    console.log (cartItem);
 
     return (
         <div className='CartItem'>
-            <img src={prod.img} alt='cardImg'/>
-            <div className='lote-div categoria'>{prod.categoria}</div>
-            <div className='lote-div raza'>{prod.raza}</div>
-            <div className='lote-div cabezas'><span>Cabezas: </span>{prod.cabezas}</div>
-            <div className='lote-div peso'><span>Peso: </span>{prod.peso}</div>
+            <img src={cartItem.prod.img} alt='cardImg'/>
+            <div className='lote-div categoria'>{cartItem.prod.categoria}</div>
+            <div className='lote-div raza'>{cartItem.prod.raza}</div>
+            <div className='lote-div cabezas'><span>Cabezas: </span>{cartItem.cant}</div>
+            <div className='lote-div peso'><span>Peso: </span>{cartItem.prod.peso}</div>
         </div>
     )
 }

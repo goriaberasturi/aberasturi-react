@@ -37,7 +37,7 @@ const Cart = () => {
             {cart.map((cartItem) => {
                 console.log(cartItem);
                 return(
-                    <CartItem key={cartItem.prod.id} prod={cartItem.prod}/>
+                    <CartItem key={cartItem.prod.id} cartItem={cartItem}/>
                 )
             })}
             <button onClick={handleClick}>Terminar compra</button>
