@@ -22,8 +22,8 @@ function App() {
               <Route exact path='/' element={<ItemListContainer/>}></Route>
               <Route exact path='/cart' element={<Cart/>}></Route>
               <Route exact path='/catalogo' element={<ItemListContainer/>}></Route>
-              <Route exact path='/catalogo/category/:cat' element={<ItemListContainer/>}></Route>
-              <Route exact path='/catalogo/item/:itemId' element={<ItemDetailContainer/>}></Route>
+              <Route exact path='/catalogo/categoria/:cat' element={<ItemListContainer/>}></Route>
+              <Route exact path='/catalogo/categoria/:catId/:itemId' element={<ItemDetailContainer/>}></Route>
               <Route path='/*' element={<Error404/>}></Route>
             </Routes>
           </Parallax>

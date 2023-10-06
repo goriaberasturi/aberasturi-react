@@ -42,7 +42,7 @@ const ItemListContainer = () => {
             <div className='catalogo'>
                 {lotes.map((p) => {
                     return (
-                        <Link key={p.id} className='ItemLink' to={`/catalogo/item/${p.id}`}>
+                        <Link key={p.id} className='ItemLink' to={`/catalogo/categoria/${p.categoryId}/${p.id}`}>
                             <Lote
                                 img={p.img}
                                 cabezas={p.cabezas}
