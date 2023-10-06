@@ -12,11 +12,33 @@
         padding: 10px;
         margin-bottom: 20px;
         font-family: 'Montserrat', sans-serif;
-        font-size: 3em;
         font-weight: 700;
-        background-color: #0d6312;
+    }
+    
+    .headline {
+        font-size: 3em;
         color: white;
+        background-color: #0d6312;
         border-radius: 8px 8px 0 0;
+    }
+    
+    .sums{
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-around;
+        font-size: 1.7em;
+        color: black;
+        border-radius: 0 0 8px 8px;
+        background-color: white;
+        
+        span {
+            color: #0d6312;
+
+        }
+    }
+
+    .off {
+        display: none;
     }
 
     .cartBtns {

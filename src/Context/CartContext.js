@@ -30,13 +30,20 @@ const CartContext = ({children}) => {
         }, 0);
         return suma;
     }
+    
+    const totalCab = () => {
+        const suma = cart.reduce((acum, cartItem) => {
+            return acum + cartItem.cant;
+        }, 0);
+        return suma;
+    }
 
     const emptyCart = () => {
         setCart([]);
     }
     
     return (
-        <cartContext.Provider value={{cart, addLote, totalPrice, emptyCart}}>
+        <cartContext.Provider value={{cart, addLote, totalPrice, totalCab, emptyCart}}>
             {children}
         </cartContext.Provider>
     )

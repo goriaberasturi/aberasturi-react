@@ -7,7 +7,7 @@ import { getFirestore, addDoc, collection} from 'firebase/firestore';
 
 const Cart = () => {
 
-    const {cart, totalPrice, emptyCart} = useContext(cartContext);
+    const {cart, totalPrice, totalCab, emptyCart} = useContext(cartContext);
 
     const order = {
         buyer: {
@@ -34,8 +34,16 @@ const Cart = () => {
 
     return (
         <div className='Cart'>
-            <div className='cartMsg'>{cart.length ? 'Su carrito' : 'Su carrito esta vacío'}</div>
+            <div className='cartMsg headline'>{cart.length ? 'Su carrito' : 'Su carrito esta vacío'}</div>
             {cart.map((cartItem) => {return(<CartItem key={cartItem.prod.id} cartItem={cartItem}/>)})}
+            <div className={`cartMsg ${cart.length ? 'sums' : 'off'}`}>
+                <div className='subjects'>
+                    <span>Cabezas totales:</span> {totalCab()}
+                </div>
+                <div className='subjects'>
+                    <span>Importe total:</span> $ {totalPrice()}
+                </div>
+            </div>
             <div className={cart.length ? 'cartBtns' : 'cartBtnsOff'}>
                 <button onClick={emptyCart}>Vaciar Carrito</button>
                 <button onClick={handleClick}>Terminar compra</button>
