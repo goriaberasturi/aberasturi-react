@@ -24,17 +24,19 @@ const CartContext = ({children}) => {
         }
     }
 
-    console.log(cart);
-
     const totalPrice = () => {
         const suma = cart.reduce((acum, cartItem) => {
             return acum + cartItem.prod.precio*cartItem.cant*cartItem.prod.peso;
         }, 0);
         return suma;
     }
+
+    const emptyCart = () => {
+        setCart([]);
+    }
     
     return (
-        <cartContext.Provider value={{cart, addLote, totalPrice}}>
+        <cartContext.Provider value={{cart, addLote, totalPrice, emptyCart}}>
             {children}
         </cartContext.Provider>
     )

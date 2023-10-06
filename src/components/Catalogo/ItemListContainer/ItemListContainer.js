@@ -50,6 +50,7 @@ const ItemListContainer = () => {
                                 raza={p.raza}
                                 peso={p.peso}
                                 ubicacion={p.ubicacion}
+                                precio={p.precio}
                             />
                         </Link>
                     )

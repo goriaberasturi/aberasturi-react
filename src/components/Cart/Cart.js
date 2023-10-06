@@ -7,13 +7,13 @@ import { getFirestore, addDoc, collection} from 'firebase/firestore';
 
 const Cart = () => {
 
-    const {cart, totalPrice} = useContext(cartContext);
+    const {cart, totalPrice, emptyCart} = useContext(cartContext);
 
     const order = {
         buyer: {
-            name: 'Gorilardo',
-            email: 'gori@gmail.com',
-            phone: '2923699856',
+            name: 'Usuario',
+            email: 'usuario@gmail.com',
+            phone: '011-222-3333',
             address: 'fake street 123'
         },
 
@@ -26,8 +26,6 @@ const Cart = () => {
         total: totalPrice(),
     }
 
-    console.log(order);
-
     const handleClick = () => {
         const db = getFirestore();
         const ordersCollection = collection(db, 'orders');
@@ -36,12 +34,12 @@ const Cart = () => {
 
     return (
         <div className='Cart'>
-            {cart.map((cartItem) => {
-                return(
-                    <CartItem key={cartItem.prod.id} cartItem={cartItem}/>
-                )
-            })}
-            <button onClick={handleClick}>Terminar compra</button>
+            <div className='cartMsg'>{cart.length ? 'Su carrito' : 'Su carrito esta vacío'}</div>
+            {cart.map((cartItem) => {return(<CartItem key={cartItem.prod.id} cartItem={cartItem}/>)})}
+            <div className={cart.length ? 'cartBtns' : 'cartBtnsOff'}>
+                <button onClick={emptyCart}>Vaciar Carrito</button>
+                <button onClick={handleClick}>Terminar compra</button>
+            </div>
         </div>
     )
 }

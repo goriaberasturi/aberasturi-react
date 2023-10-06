@@ -26,7 +26,7 @@
             overflow: hidden;
 
             &:hover {
-                filter: brightness(85%);
+                filter: brightness(115%);
             }
         }
         
@@ -70,6 +70,10 @@
         .off {
             background-color: rgba(0, 0, 0, 0.613);
             color: rgba(255, 255, 255, 0.457);
+
+            &:hover {
+                filter: brightness(35%);
+            }
         }
         
     }
@@ -90,7 +94,7 @@
         transition: .2s;
 
         &:hover {
-            filter: brightness(85%);
+            filter: brightness(115%);
         }
     }
 }
