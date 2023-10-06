@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/aberasturi-react/static/css/main.7fc0e60c.css",
-    "main.js": "/aberasturi-react/static/js/main.4fe400bf.js",
+    "main.css": "/aberasturi-react/static/css/main.4c69a2f1.css",
+    "main.js": "/aberasturi-react/static/js/main.6a62f343.js",
     "static/media/parallaxBg.jpg": "/aberasturi-react/static/media/parallaxBg.e8bd54a2f89862ef628c.jpg",
     "static/media/logo.png": "/aberasturi-react/static/media/logo.0a5e81979cddec6eb2fc.png",
     "index.html": "/aberasturi-react/index.html",
-    "main.7fc0e60c.css.map": "/aberasturi-react/static/css/main.7fc0e60c.css.map",
-    "main.4fe400bf.js.map": "/aberasturi-react/static/js/main.4fe400bf.js.map"
+    "main.4c69a2f1.css.map": "/aberasturi-react/static/css/main.4c69a2f1.css.map",
+    "main.6a62f343.js.map": "/aberasturi-react/static/js/main.6a62f343.js.map"
   },
   "entrypoints": [
-    "static/css/main.7fc0e60c.css",
-    "static/js/main.4fe400bf.js"
+    "static/css/main.4c69a2f1.css",
+    "static/js/main.6a62f343.js"
   ]
 }
