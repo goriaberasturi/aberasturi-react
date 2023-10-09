@@ -31,12 +31,6 @@ const Checkout = () => {
         const total = totalPrice();
 
         const orden = {
-            buyer: {
-                name: 'Usuario',
-                email: 'usuario@gmail.com',
-                phone: '011-222-3333',
-                address: 'fake street 123'
-            },
 
             items: cart.map((cartItem) => ({
                 id: cartItem.prod.id,
