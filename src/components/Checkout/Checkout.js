@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { getFirestore, doc, getDoc, updateDoc, addDoc, collection } from 'firebase/firestore';
 import { cartContext } from '../../Context/CartContext';
-import CartItem from '../Cart/CartItem/CartItem';
+import OrderListItem from './OrderListItem/OrderListItem';
 import './Checkout.scss'
 
 const Checkout = () => {
@@ -14,7 +14,6 @@ const Checkout = () => {
     const [emailConfirm, setEmailConfirm] = useState('');
     const [error, setError] = useState('');
     const [ordenId, setOrdenId] = useState('');
-    const [mensaje, setMensaje] = useState('');
 
     const handleForm = (e) => {
         e.preventDefault();
@@ -89,49 +88,54 @@ const Checkout = () => {
         setTelefono('');
         setEmail('');
         setEmailConfirm('');
-        setMensaje('');
     }
 
     return (
         <div className='Checkout'>
-            <h1>Generacion de orden de compra</h1>
-            <form onSubmit={handleForm}>
+            <h1>Generación de orden de compra</h1>
+            <div className='formContainer'>
                 <h2>Datos de la orden</h2>
-                <div className='formField'>
-                    <label>Nombre: </label>
-                    <input type='text' value={nombre} onChange={(e) => setNombre(e.target.value)}></input>
-                </div>
-                <div className='formField'>
-                    <label>Apellido: </label>
-                    <input type='text' value={apellido} onChange={(e) => setApellido(e.target.value)}></input>
-                </div>
-                <div className='formField'>
-                    <label>Telefono: </label>
-                    <input type='number' value={telefono} onChange={(e) => setTelefono(e.target.value)}></input>
-                </div>
-                <div className='formField'>
-                    <label>Email: </label>
-                    <input type='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                </div>
-                <div className='formField'>
-                    <label>Confirmar email: </label>
-                    <input type='email' value={emailConfirm} onChange={(e) => setEmailConfirm(e.target.value)}></input>
-                </div>
-                <div>
-                    {error && <p>{error}</p>}
-                    {ordenId && <p>Gracias por su compra!<br/> Su numero de orden es <span>{ordenId}</span></p>}
-                </div>
-                <div className='formBtns'>
-                    <button type='submit'>Finalizar compra</button>
-                </div>
-            </form>
+                
+                <form onSubmit={handleForm}>
+                    <div className='formField'>
+                        <input type='text' value={nombre} onChange={(e) => setNombre(e.target.value)}></input>
+                        <span></span>
+                        <label>Nombre</label>
+                    </div>
+                    <div className='formField'>
+                        <input type='text' value={apellido} onChange={(e) => setApellido(e.target.value)}></input>
+                        <span></span>
+                        <label>Apellido</label>
+                    </div>
+                    <div className='formField'>
+                        <input type='number' value={telefono} onChange={(e) => setTelefono(e.target.value)}></input>
+                        <span></span>
+                        <label>Telefono</label>
+                    </div>
+                    <div className='formField'>
+                        <input type='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                        <span></span>
+                        <label>Email</label>
+                    </div>
+                    <div className='formField'>
+                        <input type='email' value={emailConfirm} onChange={(e) => setEmailConfirm(e.target.value)}></input>
+                        <span></span>
+                        <label>Confirmar email</label>
+                    </div>
+                    <div>
+                        {error && <p>{error}</p>}
+                        {ordenId && <p>Gracias por su compra!<br /> Su numero de orden es <span>{ordenId}</span></p>}
+                    </div>
+                    <div className='formBtns'>
+                        <button type='submit'>Finalizar compra</button>
+                    </div>
+                </form>
+            </div>
 
             <div className='orderList'>
                 {cart.map((cartItem) => (
                     <div key={cartItem.prod.id} className='orderItem'>
-                        <p>{cartItem.cant} {cartItem.prod.categoria}, {cartItem.prod.raza}</p>
-                        <p>{cartItem.prod.precio}</p>
-                        <hr />
+                        <OrderListItem className="orderListItem" key={cartItem.prod.id} cartItem={cartItem} />
                     </div>
                 ))}
             </div>
