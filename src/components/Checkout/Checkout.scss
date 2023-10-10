@@ -6,6 +6,7 @@
     padding: 120px 5% 0 5%;
     display: grid;
     grid-template: auto 1fr / 40% 1fr;
+    font-family: 'Montserrat', sans-serif;
 
     h1 {
         grid-area: 1 / 1 / 2 / 3;
@@ -26,11 +27,68 @@
         height: fit-content;
         background-color: white;
         border-radius: 8px;
-        margin-top: 10px;
+        margin-top: 15px;
         padding-bottom: 10px;
+
+        h2 {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid silver;
+        }
+
+        form {
+            padding: 0 40px;
+            box-sizing: border-box;
+
+            .formField {
+                position: relative;
+                border-bottom: 2px solid #adadad;
+                margin: 30px 0;
+
+                input {
+                    width: 100%;
+                    padding: 0 5px;
+                    height: 40px;
+                    font-size: 1em;
+                    border: none;
+                    outline: none;
+
+                    &:focus~label,
+                    &:valid~label {
+                        top: -5px;
+                        color: #0d6312;
+                    }
+                }
+
+                label {
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    color: #adadad;
+                    transform: translateY(-50%);
+                    font-size: 16px;
+                    pointer-events: none;
+                    text-align: start;
+                    font-weight: 600;
+                }
+
+                span {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 40px;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: #0d6312;
+                    }
+                }
+            }
+        }
     }
-    
+
     .orderList {
         grid-area: 2 / 2 / 3 / 3;
+        padding: 0 10px;
     }
 }
