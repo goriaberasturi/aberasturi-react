@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import Swal from 'sweetalert2';
 
 export const cartContext = createContext([]);
 
@@ -10,17 +11,33 @@ const CartContext = ({children}) => {
 
         if(tmp){
             if(tmp.cant + lote.cant > lote.stock) {
-                alert('La cantidad de cabezas indicadas es mayor a la disponible.\nSe agrego al carrito la maxima cantidad disponible');
+                Swal.fire({
+                    title: 'La cantidad de cabezas indicadas es mayor a la disponible',
+                    text: 'Se agrego al carrito la maxima cantidad disponible',
+                    icon: 'warning',
+                    timer: 4000,
+                    showConfirmButton: false,
+                });
                 tmp.cant = lote.stock;
 
             } else {
                 tmp.cant += lote.cant;
-                alert('Se agrego el lote al carrito');
+                Swal.fire({
+                    title: 'Se agrego el lote al carrito',
+                    icon: 'success',
+                    timer: 1500,
+                    showConfirmButton: false,
+                });
             }
             
         } else {
             setCart([...cart, lote]);
-            alert('Se agrego el lote al carrito');
+            Swal.fire({
+                title: 'Se agrego el lote al carrito',
+                icon: 'success',
+                timer: 2500,
+                showConfirmButton: false,
+            });
         }
     }
 
