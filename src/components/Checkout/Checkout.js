@@ -2,42 +2,53 @@ import React, { useState, useContext } from 'react';
 import { getFirestore, doc, getDoc, updateDoc, addDoc, collection } from 'firebase/firestore';
 import { cartContext } from '../../Context/CartContext';
 import OrderListItem from './OrderListItem/OrderListItem';
-import './Checkout.scss'
+import Swal from 'sweetalert2';
+import './Checkout.scss';
 
 const Checkout = () => {
-    const { cart, removeLote, totalPrice } = useContext(cartContext);
+    const { cart, removeLote, totalPrice, totalCab } = useContext(cartContext);
 
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [telefono, setTelefono] = useState('');
     const [email, setEmail] = useState('');
     const [emailConfirm, setEmailConfirm] = useState('');
-    const [error, setError] = useState('');
     const [ordenId, setOrdenId] = useState('');
 
     const handleForm = (e) => {
         e.preventDefault();
 
         if (!nombre || !apellido || !telefono || !email || !emailConfirm) {
-            setError('Por favor, complete todos los campos obligatorios');
-            return;
-        }
+            Swal.fire({
+                title: 'Hay campos obligatorios sin llenar!',
+                icon: 'warning',
+                timer: 2500,
+                showConfirmButton: false,
 
-        if (email !== emailConfirm) {
-            setError('Los email informados no coinciden');
+            });
             return;
+        } else {
+            if (email !== emailConfirm) {
+                Swal.fire({
+                    title: 'Los email informados no coinciden',
+                    icon: 'warning',
+                    timer: 2500,
+                    showConfirmButton: false,
+                });
+                return;
+            } else {
+                Swal.fire({
+                    title: `Gracias por su compra! Su clave de orden es ${ordenId}`,
+                    icon: 'success',
+                    timer: 2500,
+                    showConfirmButton: false,
+                });
+            }
         }
 
         const total = totalPrice();
 
         const orden = {
-            buyer: {
-                name: 'Usuario',
-                email: 'usuario@gmail.com',
-                phone: '011-222-3333',
-                address: 'fake street 123'
-            },
-
             items: cart.map((cartItem) => ({
                 id: cartItem.prod.id,
                 precio: cartItem.prod.precio,
@@ -75,12 +86,10 @@ const Checkout = () => {
                     })
                     .catch((error) => {
                         console.log('Error en la creacion de la orden', error);
-                        setError('Error en orden');
                     })
             })
             .catch((error) => {
                 console.log('No se pudo actualizar el stock', error);
-                setError('No se actualizo el stock');
             });
 
         setNombre('');
@@ -90,12 +99,14 @@ const Checkout = () => {
         setEmailConfirm('');
     }
 
+    console.log(`${cart.length > 0 ? '1' : '0'}`);
+
     return (
         <div className='Checkout'>
             <h1>Generación de orden de compra</h1>
             <div className='formContainer'>
                 <h2>Datos de la orden</h2>
-                
+
                 <form onSubmit={handleForm}>
                     <div className='formField'>
                         <input type='text' value={nombre} onChange={(e) => setNombre(e.target.value)}></input>
@@ -123,7 +134,6 @@ const Checkout = () => {
                         <label>Confirmar email</label>
                     </div>
                     <div>
-                        {error && <p>{error}</p>}
                         {ordenId && <p>Gracias por su compra!<br /> Su numero de orden es <span>{ordenId}</span></p>}
                     </div>
                     <div className='formBtns'>
@@ -138,6 +148,14 @@ const Checkout = () => {
                         <OrderListItem className="orderListItem" key={cartItem.prod.id} cartItem={cartItem} />
                     </div>
                 ))}
+                <div className={`cartMsg ${cart.length ? 'sums' : 'off'}`}>
+                    <div className='subjects'>
+                        <span>Cabezas totales:</span> {totalCab()}
+                    </div>
+                    <div className='subjects'>
+                        <span>Importe total:</span> $ {totalPrice()}
+                    </div>
+                </div>
             </div>
         </div>
     )

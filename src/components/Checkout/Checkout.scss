@@ -53,16 +53,16 @@
                     border: none;
                     outline: none;
 
-                    &:focus~label,
-                    &:valid~label {
-                        top: -5px;
-                        color: #0d6312;
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none ;
+                        margin: 0;
                     }
                 }
 
                 label {
                     position: absolute;
-                    top: 50%;
+                    top: -5px;
                     left: 5px;
                     color: #adadad;
                     transform: translateY(-50%);
@@ -84,11 +84,59 @@
                     }
                 }
             }
+
+            .formBtns {
+                margin-top: 10px;
+
+                button {
+                    padding: 0 20px;
+                    height: 40px;
+                    border: none;
+                    background-color: #0d6312;
+                    color: white;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 1.1em;
+                    font-weight: 500;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: .2s;
+                    
+                    &:hover {
+                        filter: brightness(115%); 
+                    }
+                }
+            }
         }
     }
-
+    
     .orderList {
         grid-area: 2 / 2 / 3 / 3;
         padding: 0 10px;
+
+        .cartMsg {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .sums {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-around;
+            font-size: 1.2em;
+            color: black;
+            border-radius: 0 0 8px 8px;
+            background-color: white;
+
+            span {
+                color: #0d6312;
+            }
+        }
+
+        .off {
+            display: none;
+        }
     }
 }
