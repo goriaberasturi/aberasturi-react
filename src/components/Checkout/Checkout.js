@@ -49,10 +49,6 @@ const Checkout = () => {
         const total = totalPrice();
 
         const orden = {
-<<<<<<< HEAD
-
-=======
->>>>>>> pruebas
             items: cart.map((cartItem) => ({
                 id: cartItem.prod.id,
                 precio: cartItem.prod.precio,
